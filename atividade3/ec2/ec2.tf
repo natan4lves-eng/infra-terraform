@@ -4,6 +4,7 @@ resource "aws_instance" "web_server" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.sg_id]
 
+  # Instalando o servidor web e configurando o site
   user_data = <<-EOF
               #!/bin/bash
               apt-get update -y
