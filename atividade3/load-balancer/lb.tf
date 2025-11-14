@@ -6,7 +6,7 @@ resource "aws_lb" "app_lb" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  name     = "tg-web"
+  name     = "tg-web-2"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
