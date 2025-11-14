@@ -1,16 +1,3 @@
-variable "subnet_ids" {
-  type = list(string)
-}
-variable "sg_id" {
-  type = string
-}
-variable "ami" {
-  type = string
-}
-variable "instance_type" {
-  type = string
-}
-
 resource "aws_launch_template" "lt" {
   name_prefix   = "web-"
   image_id      = var.ami
