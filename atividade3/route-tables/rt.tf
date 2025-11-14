@@ -1,7 +1,3 @@
-variable "vpc_id" {}
-variable "subnet_id" {}
-variable "igw_id" {}
-
 resource "aws_route_table" "public_rt" {
   vpc_id = var.vpc_id
 
@@ -9,6 +5,8 @@ resource "aws_route_table" "public_rt" {
     cidr_block = "0.0.0.0/0"
     gateway_id = var.igw_id
   }
+
+  tags = { Name = "public-rt" }
 }
 
 resource "aws_route_table_association" "subnet_association" {

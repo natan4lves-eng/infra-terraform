@@ -1,14 +1,24 @@
-variable "subnet_ids" {}
-variable "sg_id" {}
+variable "subnet_ids" {
+  type = list(string)
+}
+variable "sg_id" {
+  type = string
+}
+variable "ami" {
+  type = string
+}
+variable "instance_type" {
+  type = string
+}
 
 resource "aws_launch_template" "lt" {
   name_prefix   = "web-"
-  
-  image_id      = "ami-0866a3c8686eaeeba"
-  instance_type = "t2.micro"
+  image_id      = var.ami
+  instance_type = var.instance_type
 
   network_interfaces {
-    security_groups = [var.sg_id]
+    associate_public_ip_address = true
+    security_groups             = [var.sg_id]
   }
 
   user_data = base64encode(<<-EOF
@@ -22,13 +32,19 @@ resource "aws_launch_template" "lt" {
 }
 
 resource "aws_autoscaling_group" "asg" {
-  desired_capacity     = 2
-  max_size             = 4
+  desired_capacity     = 1
+  max_size             = 2
   min_size             = 1
 
   vpc_zone_identifier = var.subnet_ids
   launch_template {
     id      = aws_launch_template.lt.id
     version = "$Latest"
+  }
+
+  tag {
+    key                 = "Name"
+    value               = "autoscaling-instance"
+    propagate_at_launch = true
   }
 }
