@@ -1,4 +1,3 @@
-# terraform/main.tf
 module "vpc" {
   source = "./vpc"
 }
@@ -16,10 +15,9 @@ module "igw" {
 module "rt" {
   source    = "./route-tables"
   vpc_id    = module.vpc.vpc_id
-  subnet_id = module.subnets.public_subnet_a_id   # escolha a subnet A para rota
+  subnet_id = module.subnets.public_subnet_a_id   # usa subnet A para associação de rota
   igw_id    = module.igw.igw_id
 }
-
 
 module "sg" {
   source = "./security-groups"
@@ -27,10 +25,10 @@ module "sg" {
 }
 
 module "ec2" {
-  source       = "./ec2"
-  subnet_id    = module.subnets.public_subnet_id
-  sg_id        = module.sg.web_sg_id
-  ami          = var.ami
+  source        = "./ec2"
+  subnet_id     = module.subnets.public_subnet_a_id   # instância em subnet A
+  sg_id         = module.sg.web_sg_id
+  ami           = var.ami
   instance_type = var.instance_type
 }
 
@@ -40,17 +38,17 @@ module "lb" {
     module.subnets.public_subnet_a_id,
     module.subnets.public_subnet_b_id
   ]
-  sg_id      = module.sg.web_sg_id
-  vpc_id     = module.vpc.vpc_id
+  sg_id  = module.sg.web_sg_id
+  vpc_id = module.vpc.vpc_id
 }
 
 module "asg" {
-  source     = "./auto-scaling"
-  subnet_ids = [
+  source        = "./auto-scaling"
+  subnet_ids    = [
     module.subnets.public_subnet_a_id,
     module.subnets.public_subnet_b_id
   ]
-  sg_id      = module.sg.web_sg_id
-  ami        = var.ami
+  sg_id         = module.sg.web_sg_id
+  ami           = var.ami
   instance_type = var.instance_type
 }
