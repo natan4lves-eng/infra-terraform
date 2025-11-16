@@ -35,14 +35,20 @@ module "ec2" {
 
 module "lb" {
   source     = "./load-balancer"
-  subnet_ids = [module.subnets.public_subnet_id]
+  subnet_ids = [
+    module.subnets.public_subnet_a_id,
+    module.subnets.public_subnet_b_id
+  ]
   sg_id      = module.sg.web_sg_id
   vpc_id     = module.vpc.vpc_id
 }
 
 module "asg" {
   source     = "./auto-scaling"
-  subnet_ids = [module.subnets.public_subnet_id]
+  subnet_ids = [
+    module.subnets.public_subnet_a_id,
+    module.subnets.public_subnet_b_id
+  ]
   sg_id      = module.sg.web_sg_id
   ami        = var.ami
   instance_type = var.instance_type
