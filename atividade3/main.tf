@@ -1,7 +1,4 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
+# terraform/main.tf
 module "vpc" {
   source = "./vpc"
 }
@@ -17,10 +14,10 @@ module "igw" {
 }
 
 module "rt" {
-  source     = "./route-tables"
-  vpc_id     = module.vpc.vpc_id
-  subnet_id  = module.subnets.public_subnet_id
-  igw_id     = module.igw.igw_id
+  source    = "./route-tables"
+  vpc_id    = module.vpc.vpc_id
+  subnet_id = module.subnets.public_subnet_id
+  igw_id    = module.igw.igw_id
 }
 
 module "sg" {
@@ -29,19 +26,24 @@ module "sg" {
 }
 
 module "ec2" {
-  source      = "./ec2"
-  subnet_id   = module.subnets.public_subnet_id
-  sg_id       = module.sg.web_sg_id
+  source       = "./ec2"
+  subnet_id    = module.subnets.public_subnet_id
+  sg_id        = module.sg.web_sg_id
+  ami          = var.ami
+  instance_type = var.instance_type
 }
 
 module "lb" {
-  source = "./load-balancer"
+  source     = "./load-balancer"
   subnet_ids = [module.subnets.public_subnet_id]
   sg_id      = module.sg.web_sg_id
+  vpc_id     = module.vpc.vpc_id
 }
 
 module "asg" {
-  source = "./auto-scaling"
+  source     = "./auto-scaling"
   subnet_ids = [module.subnets.public_subnet_id]
   sg_id      = module.sg.web_sg_id
+  ami        = var.ami
+  instance_type = var.instance_type
 }
