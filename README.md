@@ -9,7 +9,13 @@ O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amaz
 ✅ Implementar conceitos de Infrastructure as Code (IaC)
 
 # Conceitos Abordados
-ConceitoDescriçãoVPC (Virtual Private Cloud)Rede isolada na AWSSub-redes PúblicasSegmentação de rede com acesso à internetSecurity GroupsFirewall virtual para controle de tráfegoApplication Load Balancer (ALB)Distribuição de carga de aplicaçõesAuto Scaling Group (ASG)Escalabilidade automática de recursosLaunch TemplatesTemplates para lançamento de instâncias EC2User Data ScriptsAutomação de configuração inicial de instânciasAmazon Route 53Serviço de DNS gerenciado
+ConceitoDescriçãoVPC (Virtual Private Cloud)
+Rede isolada na AWSSub-redes Públicas
+Segmentação de rede com acesso à internetSecurity Groups
+Firewall virtual para controle de tráfegoApplication Load Balancer (ALB)
+Distribuição de carga de aplicaçõesAuto Scaling Group (ASG)
+Escalabilidade automática de recursosLaunch TemplatesTemplates para lançamento de instâncias EC2
+User Data ScriptsAutomação de configuração inicial de instânciasAmazon Route 53Serviço de DNS gerenciado
 
 # Componentes e Fluxo
 1. Usuários e Amazon Route 53
