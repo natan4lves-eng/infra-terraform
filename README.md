@@ -18,7 +18,7 @@ Escalabilidade automática de recursosLaunch TemplatesTemplates para lançamento
 User Data ScriptsAutomação de configuração inicial de instânciasAmazon Route 53Serviço de DNS gerenciado
 
 # Componentes e Fluxo
-1. Usuários e Amazon Route 53
+## Usuários e Amazon Route 53
 Usuários:
 
 Clientes finais acessando a aplicação via internet
@@ -30,7 +30,7 @@ Resolve o nome do domínio (ex: www.exemplo.com)
 Direciona requisições para o Elastic Load Balancer
 
 
-2. Elastic Load Balancing (ELB)
+## Elastic Load Balancing (ELB)
 Função:
 
 Distribui automaticamente o tráfego de entrada entre múltiplas instâncias EC2
@@ -38,7 +38,7 @@ Realiza health checks para garantir disponibilidade
 Direciona tráfego apenas para instâncias saudáveis
 
 
-3. Zonas de Disponibilidade (AZs)
+## Zonas de Disponibilidade (AZs)
 Zone A e Zone B:
 
 Zonas de disponibilidade dentro de uma mesma região AWS
