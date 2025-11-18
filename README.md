@@ -59,7 +59,7 @@ Sub-rede pública: onde as instâncias EC2 podem acessar a internet
 Instâncias EC2: servidores virtuais que executam a aplicação
 
 
-🔬 Metodologia
+## Metodologia
 1. Preparação do Ambiente
 
 Criação de ambiente LAB na AWS Academy
