@@ -9,7 +9,8 @@ O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amaz
 - Elastic Load Balancing (ELB)
 - VPC e Subnets
 - AplicaçõesAuto Scaling Group
-- Security Groups 
+- Security Groups
+- internet-gateway
 - Route 53
 
 # Objetivos
