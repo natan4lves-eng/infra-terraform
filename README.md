@@ -15,7 +15,7 @@ O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amaz
 
 # Objetivos
 
-✅ Provisionar infraestrutura elástica e altamente disponível na AWS
+✅ Provisionar infraestrutura de serviços direto na AWS
 
 ✅ Aplicar práticas de automação com Terraform
 
