@@ -4,9 +4,9 @@ O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amaz
 
 # Objetivos
 
-✅ Provisionar infraestrutura elástica e altamente disponível na AWS
-✅ Aplicar práticas de automação com Terraform
-✅ Implementar conceitos de Infrastructure as Code (IaC)
+✅ Provisionar infraestrutura elástica e altamente disponível na AWS\n
+✅ Aplicar práticas de automação com Terraform\n
+✅ Implementar conceitos de Infrastructure as Code (IaC)\n
 
 # Conceitos Abordados
 ConceitoDescriçãoVPC (Virtual Private Cloud)
