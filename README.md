@@ -16,7 +16,9 @@ O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amaz
 # Objetivos
 
 ✅ Provisionar infraestrutura elástica e altamente disponível na AWS
+
 ✅ Aplicar práticas de automação com Terraform
+
 ✅ Implementar conceitos de Infrastructure as Code (IaC)
 
 # Conceitos Abordados
@@ -27,6 +29,13 @@ Firewall virtual para controle de tráfego Application Load Balancer (ALB)
 Distribuição de carga de aplicaçõesAuto Scaling Group (ASG)
 Escalabilidade automática de recursosLaunch TemplatesTemplates para lançamento de instâncias EC2
 User Data ScriptsAutomação de configuração inicial de instânciasAmazon Route 53Serviço de DNS gerenciado
+
+
+## Metodologia utilizado para Implementação
+- Criação de ambiente LAB na AWS e acesso via Putty em uma instância EC2 baseada em Amazon Linux; 
+- Organização do projeto Terraform em módulos reutilizáveis, com arquivos separados de variáveis, saídas e lógica principal; 
+- Uso iterativo dos comandos terraform como init/plan/apply.
+
 
 # Componentes e Fluxo
 ## Usuários e Amazon Route 53
@@ -57,22 +66,4 @@ Cada zona possui:
 
 Sub-rede pública: onde as instâncias EC2 podem acessar a internet
 Instâncias EC2: servidores virtuais que executam a aplicação
-
-
-## Metodologia
-1. Preparação do Ambiente
-
-Criação de ambiente LAB na AWS Academy
-Provisionamento de instância EC2 com Amazon Linux 2023
-Configuração de acesso SSH via PuTTY
-Instalação e configuração do Terraform
-
-2. Estruturação do Código
-
-Organização modular do código Terraform
-Separação lógica de componentes (VPC, Compute, Load Balancer)
-Definição de variáveis parametrizáveis
-Configuração de outputs para visualização de recursos criados
-
-Amazon EC2 Auto Scaling
 
