@@ -1,18 +1,28 @@
+# Atividade 3 - Provisionar arquitetura de serviços AWS via Terraform
+
 # Introdução
-Este projeto implementa uma arquitetura em nuvem na Amazon Web Services (AWS) utilizando Terraform como ferramenta de Infrastructure as Code (IaC). A solução apresenta uma infraestrutura escalável, segura e altamente disponível.
-O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amazon Linux 2023.
+Este repositorio implementa uma arquitetura em nuvem na Amazon Web Services (AWS) utilizando Terraform como ferramenta de Infrastructure as Code (IaC). A solução apresenta uma infraestrutura escalável, segura e altamente disponível.
+O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amazon Linux.
+
+## Serviços que será implementado
+- EC2
+- Elastic Load Balancing (ELB)
+- VPC e Subnets
+- AplicaçõesAuto Scaling Group
+- Security Groups 
+- Route 53
 
 # Objetivos
 
-✅ Provisionar infraestrutura elástica e altamente disponível na AWS\n
-✅ Aplicar práticas de automação com Terraform\n
-✅ Implementar conceitos de Infrastructure as Code (IaC)\n
+✅ Provisionar infraestrutura elástica e altamente disponível na AWS
+✅ Aplicar práticas de automação com Terraform
+✅ Implementar conceitos de Infrastructure as Code (IaC)
 
 # Conceitos Abordados
-ConceitoDescriçãoVPC (Virtual Private Cloud)
-Rede isolada na AWSSub-redes Públicas
-Segmentação de rede com acesso à internetSecurity Groups
-Firewall virtual para controle de tráfegoApplication Load Balancer (ALB)
+Conceito Descrição VPC (Virtual Private Cloud)
+Rede isolada na AWS Sub-redes Públicas
+Segmentação de rede com acesso à internet Security Groups
+Firewall virtual para controle de tráfego Application Load Balancer (ALB)
 Distribuição de carga de aplicaçõesAuto Scaling Group (ASG)
 Escalabilidade automática de recursosLaunch TemplatesTemplates para lançamento de instâncias EC2
 User Data ScriptsAutomação de configuração inicial de instânciasAmazon Route 53Serviço de DNS gerenciado
