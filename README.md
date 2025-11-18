@@ -23,11 +23,17 @@ O ambiente foi desenvolvido e testado em AWS Lab, utilizando uma instância Amaz
 
 # Conceitos Abordados
 Conceito Descrição VPC (Virtual Private Cloud)
+
 Rede isolada na AWS Sub-redes Públicas
+
 Segmentação de rede com acesso à internet Security Groups
+
 Firewall virtual para controle de tráfego Application Load Balancer (ALB)
+
 Distribuição de carga de aplicaçõesAuto Scaling Group (ASG)
+
 Escalabilidade automática de recursosLaunch TemplatesTemplates para lançamento de instâncias EC2
+
 User Data ScriptsAutomação de configuração inicial de instânciasAmazon Route 53Serviço de DNS gerenciado
 
 
